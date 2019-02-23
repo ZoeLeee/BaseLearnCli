@@ -1,6 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const ISDEV=process.env.NODE_ENV==='development';
+
+const extractLess = new ExtractTextPlugin({
+    filename: "[name].[hash].css",
+    disable: ISDEV
+});
 
 module.exports = {
   mode: "development",
@@ -27,28 +35,15 @@ module.exports = {
       },
       {
         test: /.less$/,
-        use: [
-          {
-            loader: 'style-loader',
-          }, 
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-          }, 
-          {
-            loader: 'less-loader', // compiles Less to CSS
-            options: {
-              modifyVars: {
-                'primary-color': '#1DA57A',
-                'link-color': '#1DA57A',
-                'border-radius-base': '2px',
-              },
-              javascriptEnabled: true,
-            },
-          },
-          {
-            loader:"postcss-loader"
-          }
-        ]
+        use:extractLess.extract({
+          use: [{
+              loader: "css-loader"
+          }, {
+              loader: "less-loader"
+          }],
+          // use style-loader in development
+          fallback: "style-loader"
+      })
       }
     ]
   },
@@ -61,6 +56,7 @@ module.exports = {
       filename: "./index.html"
     }),
     new CleanWebpackPlugin(["dist"]),
+    extractLess,
   ],
   output: {
     filename: "[hash].bundle.js",
@@ -69,5 +65,9 @@ module.exports = {
   devServer: {
     port: 3333,
     open: true,
-  }
+  },
+  devtool: ISDEV?"eval-source-map":"source-map"
 }
+
+
+
