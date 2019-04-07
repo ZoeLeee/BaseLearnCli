@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -57,6 +58,10 @@ module.exports = {
     }),
     new CleanWebpackPlugin(["dist"]),
     extractLess,
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('../dist/manifest.json')}
+      )
   ],
   output: {
     filename: "[hash].bundle.js",
@@ -66,7 +71,7 @@ module.exports = {
     port: 3333,
     open: true,
   },
-  devtool: ISDEV?"eval-source-map":"source-map"
+  devtool: ISDEV?"eval-source-map":"none"
 }
 
 
