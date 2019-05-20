@@ -39,6 +39,5 @@
     "antd-mobile": "^2.2.9",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
-  },
-  "homepage": ""
+  }
 }
