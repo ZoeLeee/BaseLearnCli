@@ -5,11 +5,11 @@
   "main": "./src/index.js",
   "scripts": {
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js",
-    "dev:server": "cross-env NODE_ENV=development supervisor server/server.js",
-    "dev:server1": "cross-env NODE_ENV=development node server/server.js",
+    "dev:server": "nodemon server/server.js",
     "build:client": "webpack --config ./config/webpack.config.pro.js",
     "build:server": "cross-env NODE_ENV=development webpack --config ./config/webpack.server.js",
-    "build": "npm run build:client&&npm run build:server"
+    "build": "npm run build:client&&npm run build:server",
+    "start": "cross-env NODE_ENV=production supervisor server/server.js"
   },
   "author": "Zoe",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^0.19.1",
     "memory-fs": "^0.4.1",
+    "nodemon": "^1.19.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2",
