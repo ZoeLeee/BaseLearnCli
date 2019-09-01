@@ -1,13 +1,13 @@
 {
-  "name": "basecli",
-  "version": "1.0.0",
-  "description": "",
+  "name": "{{projectname}}",
+  "version": "{{projectVersion}}",
+  "description": "{{projectDescription}}",
   "main": "./src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./config/webpack.config.js",
     "build": "webpack --config ./config/webpack.config.js --mode production"
   },
-  "author": "Zoe",
+  "author": "{{author}}",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -24,8 +24,6 @@
   },
   "dependencies": {
     "react": "^16.8.2",
-    "react-dom": "^16.8.2",
-    "react-redux": "^6.0.1",
-    "redux": "^4.0.1"
+    "react-dom": "^16.8.2"
   }
 }
