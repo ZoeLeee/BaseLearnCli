@@ -1,5 +1,5 @@
 {
-  "name": "{{projectname}}",
+  "name": "{{projectName}}",
   "version": "{{projectVersion}}",
   "description": "{{projectDescription}}",
   "main": "./src/index.js",
