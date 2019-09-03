@@ -1,7 +1,2 @@
-{{#unless supportMacawAdmin}}
-# 如果不开启admin后台，登录页面和密码修改页面是不需要的
-src/entry/login.js  	
-{{/unless}}
-
-# 最终生成的项目中不需要ignore文字自身
 templates.ignore
+package_temp.json

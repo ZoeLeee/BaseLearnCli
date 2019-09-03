@@ -1,13 +1,13 @@
 {
-  "name": "xxx",
-  "version": "1.0.0",
-  "description": "",
+  "name": "{{projectName}}",
+  "version": "{{projectVersion}}",
+  "description": "{{projectDescription}}",
   "main": "./src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config ./config/webpack.config.js",
     "build": "webpack --config ./config/webpack.config.js --mode production"
   },
-  "author": "zoe",
+  "author": "{{author}}",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.3.3",
