@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const AddAssetHtmlPlugin = require("add-asset-html-webpack-plugin");
 
 const ISDEV=process.env.NODE_ENV==='development';
 
@@ -61,7 +62,14 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: require('../dist/manifest.json')}
-      )
+      ),
+      new AddAssetHtmlPlugin(
+        [
+            {
+                filepath: "./dist/*.lib.js",
+            },
+        ]
+    ),
   ],
   output: {
     filename: "[hash].bundle.js",
