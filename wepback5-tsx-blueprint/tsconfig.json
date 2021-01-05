@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "*": [
+                "types/*"
+            ],
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "module": "commonjs",
+        "target": "es5",
+        "lib": [
+            "es5",
+            "es6",
+            "es7",
+            "es2017",
+            "dom"
+        ],
+        "types": [
+            "@emotion/react/types/css-prop",
+            "node"
+        ],
+        "sourceMap": false,
+        "jsx": "react",
+        "strict": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "rootDir": "./",
+        "baseUrl": "./",
+        "skipLibCheck": true,
+        "declaration": true,
+        "noEmitOnError": false,
+        "emitDeclarationOnly": true,
+        "outDir": ".tmp"
+    },
+    "exclude": [
+        ".tmp",
+        "node_modules"
+    ]
+}
