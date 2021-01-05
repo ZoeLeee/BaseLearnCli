@@ -7,14 +7,7 @@
             }
         ],
         "@babel/preset-react",
-        "@babel/preset-typescript",
-        [
-            "@emotion/babel-preset-css-prop",
-            {
-                "autoLabel": "dev-only",
-                "labelFormat": "[local]"
-            }
-        ]
+        "@babel/preset-typescript"
     ],
     "plugins": [
         [

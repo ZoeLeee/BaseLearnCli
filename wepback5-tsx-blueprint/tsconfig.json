@@ -11,14 +11,10 @@
         "module": "commonjs",
         "target": "es5",
         "lib": [
-            "es5",
             "es6",
-            "es7",
-            "es2017",
             "dom"
         ],
         "types": [
-            "@emotion/react/types/css-prop",
             "node"
         ],
         "sourceMap": false,

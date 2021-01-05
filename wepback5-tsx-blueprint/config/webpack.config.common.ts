@@ -7,17 +7,16 @@ import webpack from 'webpack';
 const isDevelopment = process.env.NODE_ENV === "development";
 
 const config: Configuration = {
-  context: path.resolve(__dirname, "../"),
-  entry: ["./src/index.tsx"],
+  entry: path.join(__dirname, '../src/index.tsx'),
   output: {
     filename: "js/[name].[contenthash].js",
     chunkFilename: "js/[name].bundle.js",
-    path: path.resolve(process.cwd(), "dist"),
-    // publicPath: "./",
+    path: path.resolve(__dirname, "../dist"),
+    publicPath: "/",
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
-    modules: ["node_modules", path.resolve(__dirname, "src")],
+    modules: ["node_modules", path.resolve(__dirname, "../src")],
     alias: {
       "@": path.resolve(__dirname, "../src"),
       lodash$: "lodash-es",
